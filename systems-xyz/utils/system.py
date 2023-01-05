@@ -42,6 +42,6 @@ class System:
     def __str__(self) -> str:
         lines = []
         lines.append('{}'.format(len(self._atoms)))
-        lines.append('cell {} {} {}'.format(self._cell_vectors[0], self._cell_vectors[1], self._cell_vectors[2]))
+        lines.append('cell {:6.3f} {:6.3f} {:6.3f}'.format(self._cell_vectors[0], self._cell_vectors[1], self._cell_vectors[2]))
         lines.extend([str(x) for x in self._atoms])
         return '\n'.join(lines)
