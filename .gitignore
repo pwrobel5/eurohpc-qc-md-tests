@@ -2,6 +2,6 @@ __pycache__/
 *.dat
 vscode/
 *.psp
-*.xyz
 *.txt
-
+*.xyz
+!systems-xyz/**/*.xyz
