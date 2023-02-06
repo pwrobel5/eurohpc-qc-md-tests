@@ -27,5 +27,9 @@ class Atom:
     def coordinates(self) -> npt.ArrayLike:
         return np.copy(self._coordinates)
     
+    @property
+    def symbol(self) -> str:
+        return self._symbol
+    
     def __str__(self) -> str:
         return '{} {:12.8f} {:12.8f} {:12.8f}'.format(self._symbol, *self._coordinates)

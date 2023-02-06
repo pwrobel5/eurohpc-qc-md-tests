@@ -63,5 +63,29 @@ class System:
         return '\n'.join(lines)
     
     @property
+    def cell_vectors(self) -> npt.ArrayLike:
+        return self._cell_vectors
+
+    @property
     def periodic(self) -> bool:
-        return self._cell_vectors.size == 0
+        return self._cell_vectors.size != 0
+    
+    @property
+    def atoms_number(self) -> int:
+        return len(self._atoms)
+    
+    @property
+    def atoms(self) -> list[Atom]:
+        return self._atoms
+    
+    @property
+    def commentary(self) -> str:
+        return self._commentary
+    
+    @property
+    def atom_unique_types(self) -> list[str]:
+        types_set = set()
+        for atom in self._atoms:
+            types_set.add(atom.symbol)
+        
+        return list(types_set)
