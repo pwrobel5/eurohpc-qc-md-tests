@@ -1,7 +1,5 @@
 import argparse
-from utils import System, Atom
-
-import numpy as np
+from utils import read_system_from_xyz
 
 parser = argparse.ArgumentParser(description='Create .xyz file with extended cell along chosen vectors from basic .xyz file')
 
@@ -18,16 +16,7 @@ cell_vector = args.cell
 times = args.times
 output_file_name = args.output_name
 
-with open(input_file_path, 'r') as input_file:
-    atoms_number = int(input_file.readline())
-    input_file.readline()
-    atoms_list = []
-    for _ in range(atoms_number):
-        line = input_file.readline().split()
-        current_atom = Atom(line[0], np.array([float(line[1]), float(line[2]), float(line[3])]))
-        atoms_list.append(current_atom)
-
-atomic_system = System(np.array(cell_vector), atoms_list)
+atomic_system = read_system_from_xyz(input_file_path, cell_vector)
 for direction in directions:
     atomic_system = atomic_system.multiple_in_direction(direction, times)
 

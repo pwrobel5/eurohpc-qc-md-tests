@@ -15,9 +15,11 @@ class Atom:
         return moved_atom
     
     def rotate_by_angle(self, angle: float) -> Atom:
-        rotation_matrix = np.array([[np.cos(angle), -np.sin(angle), 0.0],
-                                    [np.sin(angle),  np.cos(angle), 0.0],
-                                    [          0.0,            0.0, 1.0]])
+        # rotation of coordination system is made counter-clockwise by a given angle
+        # thus rotation of vector coordinates is clockwise
+        rotation_matrix = np.array([[ np.cos(angle), np.sin(angle), 0.0],
+                                    [-np.sin(angle), np.cos(angle), 0.0],
+                                    [           0.0,           0.0, 1.0]])
         new_coordinates = rotation_matrix @ self._coordinates
         return Atom(self._symbol, new_coordinates)
     
