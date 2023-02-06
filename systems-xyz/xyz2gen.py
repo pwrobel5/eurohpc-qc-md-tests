@@ -18,7 +18,6 @@ is_periodic = xyz_system.periodic
 
 with open(output_file_name, 'w') as output_file:
     output_file.write('{} '.format(xyz_system.atoms_number))
-
     if is_periodic:
         output_file.write('S\n')
     else:
