@@ -1,6 +1,7 @@
 __pycache__/
 *.dat
 vscode/
+venv/
 *.psp
 *.txt
 *.xyz
