@@ -1,0 +1,79 @@
+&GLOBAL
+  PROJECT ec
+  RUN_TYPE MD
+  PRINT_LEVEL LOW
+&END GLOBAL
+
+&FORCE_EVAL
+  METHOD Quickstep
+  &SUBSYS
+    &CELL
+      ABC 4.802 4.802 4.802
+    &END CELL
+    &TOPOLOGY
+      COORD_FILE_FORMAT XYZ
+      COORD_FILE_NAME 0001-ec.xyz
+    &END TOPOLOGY
+  &END SUBSYS
+  
+  &DFT
+    CHARGE 0
+    
+    &QS
+      METHOD XTB
+      EPS_DEFAULT 1.0E-10
+      &XTB
+        CHECK_ATOMIC_CHARGES F
+        DO_EWALD T
+        USE_HALOGEN_CORRECTION T
+      &END XTB
+    &END QS
+    
+    &MGRID
+      NGRIDS 4
+      CUTOFF 300
+      REL_CUTOFF 60
+    &END MGRID
+    
+    
+    &SCF
+      SCF_GUESS ATOMIC
+      EPS_SCF 1.0E-7
+      MAX_SCF 3000
+      &OT T
+        PRECONDITIONER FULL_ALL
+        ENERGY_GAP 0.002
+      &END OT
+    &END SCF
+    
+    &PRINT
+      &MOMENTS SILENT
+      &END MOMENTS
+    &END PRINT
+  &END DFT
+&END FORCE_EVAL
+
+&MOTION
+  &MD
+    ENSEMBLE NVT
+    STEPS 100000
+    TIMESTEP 1.0
+    TEMPERATURE 298
+    &THERMOSTAT
+      &NOSE
+        LENGTH 3
+        YOSHIDA 3
+        TIMECON 100
+        MTS 2
+      &END NOSE
+    &END THERMOSTAT
+  &END MD
+  
+  &PRINT
+    &RESTART
+      &EACH
+        MD 5
+      &END EACH
+    &END RESTART
+  &END PRINT
+&END MOTION
