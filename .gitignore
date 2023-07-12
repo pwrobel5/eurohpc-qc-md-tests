@@ -6,3 +6,5 @@ venv/
 *.txt
 *.xyz
 !systems-xyz/**/*.xyz
+*.skf
+cp2k/dftb/3ob-3-1/*
