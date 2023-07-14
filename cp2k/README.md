@@ -124,3 +124,11 @@ Studied range of system sizes was quite narrow, due to high memory requirements 
 
 ![MP2-speedup](images/MP2-speedup-scalling.png)
 ![MP2-efficiency](images/MP2-efficiency-scalling.png)
+
+## Molecular dynamics
+
+Speed of different MD approaches were compared for Born-Oppenheimer MD with PBE or BP functional, Second-Generation Car-Parinello MD (SGCPMD) and Tight-Binding methods - DFTB with 3ob parameterisation and GFN1-xTB.
+
+As a metric for each method number of timesteps per (time unit * number of CPUs) was used.
+
+![md-results](images/md.png)
