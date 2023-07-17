@@ -7,14 +7,14 @@ class PseudopotentialInfo():
         self._l_max = l_max
     
     def __str__(self):
-        return ' *{}\n  LMAX={}\n'.format(self._file_name, self._l_max)
+        return '*{}\n  LMAX={}\n'.format(self._file_name, self._l_max)
 
 ATOM_PSEUDOPOTENTIALS = {
-    'H':  PseudopotentialInfo('H-GTH-BLYP.psp', 'S'),
-    'Li': PseudopotentialInfo('Li-GTH-BLYP.psp', 'S'),
-    'C':  PseudopotentialInfo('C-GTH-BLYP.psp', 'P'),
-    'O':  PseudopotentialInfo('O-GTH-BLYP.psp', 'P'),
-    'Na': PseudopotentialInfo('Na-GTH-BLYP.psp', 'S')
+    'H':  PseudopotentialInfo('H-GTH-BP.psp', 'S'),
+    'Li': PseudopotentialInfo('Li-GTH-BP.psp', 'S'),
+    'C':  PseudopotentialInfo('C-GTH-BP.psp', 'P'),
+    'O':  PseudopotentialInfo('O-GTH-BP.psp', 'P'),
+    'Na': PseudopotentialInfo('Na-GTH-BP.psp', 'S')
 }
 
 if len(sys.argv) != 2:

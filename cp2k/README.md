@@ -2,6 +2,8 @@
 
 Here are presented some general tips for use-cases studied in this project. All studied systems consisted of different numbers of ethylene carbonate (EC) molecules.
 
+Basis sets and pseudopotentials are collected in `utils/` subdirectory, they are taken from [CP2K repository](https://github.com/cp2k/cp2k/tree/master/data). There also the `t_c_g.dat` file used in B3LYP and MP2 could be found. For standard DFTB the `3-ob` parameter set was used, it could be downloaded from the [DFTB website](dftb.org).
+
 ## Single-point energy
 
 Four methods were studied: MP2 and DFT with three different functionals: B3LYP, PBE and BP.
