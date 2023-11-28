@@ -5,7 +5,7 @@ from utils import read_system_from_xyz
 parser = argparse.ArgumentParser(description='Convert xyz file to gen format used by DFTB+')
 
 parser.add_argument('input', metavar='input', type=str, help='Path to input .xyz file')
-parser.add_argument('-o', '--output-name', type=str, default='output.xyz', help='Name of the output file (default output.xyz)')
+parser.add_argument('-o', '--output-name', type=str, default='output.gen', help='Name of the output file (default output.gen)')
 parser.add_argument('-c', '--cell-vectors', type=float, nargs='+', default=[], help='Cell vector(s) (default empty - non-periodic system)')
 
 args = parser.parse_args()
