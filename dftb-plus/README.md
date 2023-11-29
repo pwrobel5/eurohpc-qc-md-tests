@@ -14,6 +14,8 @@ In subdirectories input files for geometry optimization, lattice optimization, D
 * xTB methods after long enough simulation cause out-of-memory errors (for systems above 8 molecules), to not waste time for wating at SLURM queue it is better to run and restart short simulations in a loop during one SLURM task
 * IPEA1-xTB method works only for non-periodic systems
 * TD-DFTB and Ehrenfest MD needs that the DFTB+ is compiled with ARPACK which requires compilation without MPI. These options are disabled by default on Ares/Prometheus, in case of need to use these utilities it is possible to manually compile own version of DFTB+
+* Python API provides only basic calculations - single point energies
+* Python API produces gradients of potential energy, thus to obtain forces it is needed to take negative value of them
 
 # Results of experiments
 
