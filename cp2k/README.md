@@ -133,6 +133,8 @@ Studied range of system sizes was quite narrow, due to high memory requirements 
 
 Speed of different MD approaches were compared for Born-Oppenheimer MD with PBE or BP functional, Second-Generation Car-Parinello MD (SGCPMD) and Tight-Binding methods - DFTB with 3ob parameterisation and GFN1-xTB.
 
-As a metric for each method number of timesteps per (time unit * number of CPUs) was used.
+As a metric for each method number of timesteps times value of timestep per (time unit * number of CPUs) was used.
 
 ![md-results](images/md.png)
+
+For BOMD there is no significant difference between BP and PBE functionals. SGCPMD makes sense for small systems, while for 50 molecules or more, these calculations have similar speed as standard BOMD. From semi-empirical methods GFN1-xTB is usually faster (and gives better results).
